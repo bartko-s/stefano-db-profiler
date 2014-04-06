@@ -1,0 +1,34 @@
+{
+    "name": "stefano/stefano-db-profiler",
+    "description": "A ZF2 module to profile db queries using Zend\\Db\\Adapter\\Profiler\\Profiler and write them to ZendDeveloperTools toolbar.",
+    "version": "0.0.1-dev",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "database", "profiler", "zf2", "module"
+    ],
+    "support": {
+        "source": "https://github.com/bartko-s/",
+        "issues": "https://github.com/bartko-s/stefano-db-profiler/issues"
+    },
+    "homepage": "https://github.com/bartko-s/stefano-db-profiler",
+    "authors": [
+        {
+            "name": "Štefan Bartko"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "zendframework/zendframework": "2.*",
+        "zendframework/zend-developer-tools": "*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-0": {
+            "StefanoDbProfiler\\": "src/"
+        },
+        "classmap": [
+            "./src/"
+        ]
+    }
+}

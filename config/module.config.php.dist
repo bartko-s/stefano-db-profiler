@@ -1,0 +1,9 @@
+<?php
+return array(
+    'stefano_db_profiler' => array(
+        /**
+         * Db adapter which you want to profile
+         */
+        //'dbAdapterServiceManagerKey' => 'Zend\Db\Adapter\Adapter',
+    ),
+);
