@@ -5,6 +5,10 @@ Db Profiler
 | :---: |
 | [![Dependency Status](https://www.versioneye.com/user/projects/534186d3e97a46bbf90000dc/badge.png)](https://www.versioneye.com/user/projects/534186d3e97a46bbf90000dc) |
 
+A ZF2 module to profile db queries using ```\Zend\Db\Adapter\Profiler\Profiler``` and write them to ZendDeveloperTools toolbar
+
+- - -
+
 Features
 ----
 
@@ -14,6 +18,8 @@ Instalation
 ---
 
 - Add following line to your composer.json file ``` "stefano/stefano-db-profiler": "*" ```
+
+- run ```composer update```
 
 - Add ``` StefanoDbProfiler ``` to your application.config.php
 
