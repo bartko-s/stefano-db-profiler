@@ -32,6 +32,12 @@ class DbCollector
 
         if(null == $queryType) {
             $count = count($profiles);
+        } elseif('other' == strtolower($queryType)) {
+            foreach ($profiles as $profile) {
+                if(!preg_match('@(^SELECT|^UPDATE|^DELETE|^INSERT)@i', trim($profile['sql']))) {
+                    $count++;
+                }
+            }
         } else {
             foreach ($profiles as $profile) {
                 if(preg_match('|^' . $queryType . '|i', trim($profile['sql']))) {
@@ -53,6 +59,12 @@ class DbCollector
         if(null == $queryType) {
             foreach($profiles as $profile) {
                 $time = $time + $profile['elapse'];
+            }
+        } elseif('other' == strtolower($queryType)) {
+            foreach ($profiles as $profile) {
+                if(!preg_match('@(^SELECT|^UPDATE|^DELETE|^INSERT)@i', trim($profile['sql']))) {
+                    $time = $time + $profile['elapse'];
+                }
             }
         } else {
             foreach ($profiles as $profile) {

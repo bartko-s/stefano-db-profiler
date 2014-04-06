@@ -31,6 +31,10 @@
                 <span class="zdt-detail-label">delete</span>
                 <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('DELETE'); ?></span>
             </span>
+            <span class="zdt-toolbar-info">
+                <span class="zdt-detail-label">other</span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('OTHER'); ?></span>
+            </span>
 
             <span class="zdt-toolbar-info zdt-toolbar-info-heading zdt-toolbar-topspacing">Time</span>
             <span class="zdt-toolbar-info">
@@ -48,6 +52,10 @@
             <span class="zdt-toolbar-info">
                 <span class="zdt-detail-label">delete</span>
                 <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('DELETE')); ?></span>
+            </span>
+            <span class="zdt-toolbar-info">
+                <span class="zdt-detail-label">other</span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('OTHER')); ?></span>
             </span>
 
             <span class="zdt-toolbar-info zdt-toolbar-info-heading zdt-toolbar-topspacing zdt-toolbar-dbquery-heading">Query Profiles</span>
