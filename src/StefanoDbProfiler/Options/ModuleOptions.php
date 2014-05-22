@@ -6,17 +6,17 @@ use Zend\Stdlib\AbstractOptions;
 class ModuleOptions
     extends AbstractOptions
 {
-    private $dbAdapterServiceManagerKey;
+    private $dbAdapterServiceManagerKey = array();
 
     /**
-     * @param string $keyName
+     * @param array|string $keyName
      */
     public function setDbAdapterServiceManagerKey($keyName) {
-        $this->dbAdapterServiceManagerKey = $keyName;
+        $this->dbAdapterServiceManagerKey = (array) $keyName;
     }
 
     /**
-     * @return string
+     * @return array
      */
     public function getDbAdapterServiceManagerKey() {
         return $this->dbAdapterServiceManagerKey;

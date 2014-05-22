@@ -2,8 +2,10 @@
 return array(
     'stefano_db_profiler' => array(
         /**
-         * Db adapter which you want to profile
+         * List of all Db adapters which you want to profile
          */
-        //'dbAdapterServiceManagerKey' => 'Zend\Db\Adapter\Adapter',
+        'dbAdapterServiceManagerKey' => array(
+            'Zend\Db\Adapter\Adapter',
+        ),
     ),
 );

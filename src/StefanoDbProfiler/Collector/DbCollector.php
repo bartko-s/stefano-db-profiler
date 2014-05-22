@@ -8,10 +8,7 @@ use ZendDeveloperTools\Collector\CollectorInterface;
 class DbCollector
     implements CollectorInterface
 {
-    /**
-     * @var Profiler
-     */
-    protected $profiler;
+    protected $profilers = array();
 
     public function getName() {
         return 'StefanoDbProfiler';
@@ -25,8 +22,7 @@ class DbCollector
     }
 
     public function getQueryCount($queryType = null) {
-        $profiles = $this->getProfiler()
-                         ->getProfiles();
+        $profiles = $this->getProfiles();
 
         $count = 0;
 
@@ -51,8 +47,7 @@ class DbCollector
     }
 
     public function getQueryTime($queryType = null) {
-        $profiles = $this->getProfiler()
-                         ->getProfiles();
+        $profiles = $this->getProfiles();
 
         $time = 0;
 
@@ -78,23 +73,47 @@ class DbCollector
     }
 
     /**
+     * @param string $adapterName
      * @param Profiler $profiler
      */
-    public function setProfiler(Profiler $profiler) {
-        $this->profiler = $profiler;
+    public function addProfiler($adapterName, Profiler $profiler) {
+        $this->profilers[$adapterName] = $profiler;
     }
 
     /**
-     * @return Profiler
+     * @return array Profilers
      */
-    public function getProfiler() {
-        return $this->profiler;
+    public function getProfilers() {
+        return $this->profilers;
     }
 
     /**
      * @return bolean
      */
     public function hasProfiler() {
-        return ($this->profiler) ? true : false;
+        return (1 <= count($this->profilers)) ? true : false;
+    }
+
+    /**
+     * @return array
+     */
+    public function getProfiles() {
+        $profiles = array();
+
+        foreach($this->getProfilers() as $adapterServiceKey => $profiler) {
+            foreach($profiler->getProfiles() as $query) {
+                $query['adapterServiceKey'] = $adapterServiceKey;
+                $profiles[] = $query;
+            }
+        }
+
+        usort($profiles, function($a, $b){
+            if ($a['start'] == $b['start']) {
+                return 0;
+            }
+                return ($a['start'] < $b['start']) ? -1 : 1;
+        });
+
+        return $profiles;
     }
 }

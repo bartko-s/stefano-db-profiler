@@ -60,9 +60,14 @@
 
             <span class="zdt-toolbar-info zdt-toolbar-info-heading zdt-toolbar-topspacing zdt-toolbar-dbquery-heading">Query Profiles</span>
             <span class="zdt-toolbar-info zdt-toolbar-dbquery">
-            <?php $profiler = $this->collector->getProfiler(); ?>
-            <?php foreach ($profiler->getProfiles() as $query): ?>
+
                 <hr />
+            <?php foreach ($this->collector->getProfiles() as $query): ?>
+                <span class="zdt-detail-label">Adapter</span>
+                <span class="zdt-detail-value zdt-detail-dbquery">
+                    <?php echo $this->escapeHtml($query['adapterServiceKey']) ?>
+                </span>
+                <span class="clear"></span>
                 <span class="zdt-detail-label">SQL</span>
                 <span class="zdt-detail-value zdt-detail-dbquery zdt-detail-dbquery-sql">
                     <?php /* highlight UPPERCASE words in the query, which should mostly match SQL keywords */ ?>
@@ -92,6 +97,7 @@
                     <?php echo $this->escapeHtml($this->ZendDeveloperToolsTime($query['elapse'])) ?>
                 </span>
                 <span class="clear"></span>
+                <hr />
             <?php endforeach; ?>
             </span>
             <?php else: ?>

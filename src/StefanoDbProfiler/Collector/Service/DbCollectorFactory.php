@@ -14,12 +14,13 @@ class DbCollectorFactory
 
         $dbCollector = new DbCollector();
 
-        if($serviceLocator->has($moduleOptions->getDbAdapterServiceManagerKey())) {
-            $profiler = $serviceLocator->get($moduleOptions->getDbAdapterServiceManagerKey())
-                                       ->getProfiler();
-
-            if(null != $profiler) {
-                $dbCollector->setProfiler($profiler);
+        foreach($moduleOptions->getDbAdapterServiceManagerKey() as $adapterServiceKey) {
+            if($serviceLocator->has($adapterServiceKey)) {
+                $profiler = $serviceLocator->get($adapterServiceKey)
+                                           ->getProfiler();
+                if(null != $profiler) {
+                    $dbCollector->addProfiler($adapterServiceKey, $profiler);
+                }
             }
         }
 

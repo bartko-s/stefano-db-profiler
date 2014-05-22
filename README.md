@@ -13,6 +13,13 @@ Features
 ----
 
 - profiling db queries
+- support multiple db connections
+
+Dependencies
+------------
+
+- Zend Framework 2
+- Zend Developer Tools
 
 Instalation
 ---
@@ -23,7 +30,7 @@ Instalation
 
 - Add ``` StefanoDbProfiler ``` to your application.config.php
 
-- Enable profiler for your Db Adapter
+- Enable profiler for your Db Adapter or Adapters
 
 ```
 'db' => array(
@@ -35,16 +42,18 @@ Instalation
 )
 ```
 
-- Library uses ``` Zend\Db\Adapter\Adapter ``` service key. If you are uses different key for your Db Adapter you must set it by configuration options.
+- Library uses ```Zend\Db\Adapter\Adapter``` service key. If you are uses different key for your Db Adapter you must set it by configuration options.
 
 Options
----
+-------
 
-Configuration options are available in ```config/stefano.db.profiler.global.php.dist``` file. If you want to change the default ones, copy it in your ```config/autoload directory```, remove the ```.dist``` extension and edit it.
+Configuration options are available in ```config/stefano.db.profiler.global.php.dist``` file. If you want to change the default ones, copy it in your ```config/autoload``` directory, remove the ```.dist``` extension and edit it.
 
 Options available :
 
-- ```dbAdapterServiceManagerKey``` : Your Db Adapter service key. ``` Zend\Db\Adapter\Adapter ``` is default
+- dbAdapterServiceManagerKey : List of all Db Adapter service manager keys which you want to profile. Zend\Db\Adapter\Adapter is default
+
+
 
 Screenshot
 ---
