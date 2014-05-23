@@ -14,48 +14,26 @@
     <div class="zdt-toolbar-detail zdt-toolbar-dbquery-detail">
         <div class="zdt-toolbar-detail-inner">
             <?php if ($this->collector->hasProfiler()) : ?>
-            <span class="zdt-toolbar-info zdt-toolbar-info-heading">Quantity</span>
+            <span class="zdt-toolbar-info zdt-toolbar-info-heading">Queries</span>
             <span class="zdt-toolbar-info">
                 <span class="zdt-detail-label">create</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('INSERT'); ?></span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('INSERT'); ?> in <?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('INSERT')); ?></span>
             </span>
             <span class="zdt-toolbar-info">
                 <span class="zdt-detail-label">read</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('SELECT'); ?></span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('SELECT'); ?> in <?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('SELECT')); ?></span>
             </span>
             <span class="zdt-toolbar-info">
                 <span class="zdt-detail-label">update</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('UPDATE'); ?></span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('UPDATE'); ?> in <?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('UPDATE')); ?></span>
             </span>
             <span class="zdt-toolbar-info">
                 <span class="zdt-detail-label">delete</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('DELETE'); ?></span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('DELETE'); ?> in <?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('DELETE')); ?></span>
             </span>
             <span class="zdt-toolbar-info">
                 <span class="zdt-detail-label">other</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('OTHER'); ?></span>
-            </span>
-
-            <span class="zdt-toolbar-info zdt-toolbar-info-heading zdt-toolbar-topspacing">Time</span>
-            <span class="zdt-toolbar-info">
-                <span class="zdt-detail-label">create</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('INSERT')); ?></span>
-            </span>
-            <span class="zdt-toolbar-info">
-                <span class="zdt-detail-label">read</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('SELECT')); ?></span>
-            </span>
-            <span class="zdt-toolbar-info">
-                <span class="zdt-detail-label">update</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('UPDATE')); ?></span>
-            </span>
-            <span class="zdt-toolbar-info">
-                <span class="zdt-detail-label">delete</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('DELETE')); ?></span>
-            </span>
-            <span class="zdt-toolbar-info">
-                <span class="zdt-detail-label">other</span>
-                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('OTHER')); ?></span>
+                <span class="zdt-detail-value zdt-detail-value-right"><?php echo $this->collector->getQueryCount('OTHER'); ?> in <?php echo $this->ZendDeveloperToolsTime($this->collector->getQueryTime('OTHER')); ?></span>
             </span>
 
             <span class="zdt-toolbar-info zdt-toolbar-info-heading zdt-toolbar-topspacing zdt-toolbar-dbquery-heading">Query Profiles</span>
