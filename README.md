@@ -7,6 +7,8 @@ Db Profiler
 
 A ZF2 module to profile db queries using ```\Zend\Db\Adapter\Profiler\Profiler``` and write them to ZendDeveloperTools toolbar
 
+![Db Profiler](./doc/images/snapshot.png)
+
 - - -
 
 Features
@@ -52,10 +54,3 @@ Configuration options are available in ```config/stefano.db.profiler.global.php.
 Options available :
 
 - dbAdapterServiceManagerKey : List of all Db Adapter service manager keys which you want to profile. Zend\Db\Adapter\Adapter is default
-
-
-
-Screenshot
----
-
-![Db Profiler](./doc/images/snapshot.png)
