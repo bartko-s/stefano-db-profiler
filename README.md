@@ -3,7 +3,7 @@ Db Profiler
 
 | Dependencies |
 | :---: |
-| [![Dependency Status](https://www.versioneye.com/user/projects/534186d3e97a46bbf90000dc/badge.png)](https://www.versioneye.com/user/projects/534186d3e97a46bbf90000dc) |
+| [![Dependency Status](https://www.versioneye.com/user/projects/5526ab482ced4f6dfd0000ca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5526ab482ced4f6dfd0000ca) |
 
 A ZF2 module to profile db queries using ```\Zend\Db\Adapter\Profiler\Profiler``` and write them to ZendDeveloperTools toolbar
 
