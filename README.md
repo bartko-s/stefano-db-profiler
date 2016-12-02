@@ -5,7 +5,7 @@ Db Profiler
 | :---: |
 | [![Dependency Status](https://www.versioneye.com/user/projects/5526ab482ced4f6dfd0000ca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5526ab482ced4f6dfd0000ca) |
 
-A ZF2 module to profile db queries using ```\Zend\Db\Adapter\Profiler\Profiler``` and write them to ZendDeveloperTools toolbar
+A ZF2, ZF3 module to profile db queries using ```\Zend\Db\Adapter\Profiler\Profiler``` and write them to ZendDeveloperTools toolbar
 
 ![Db Profiler](./doc/images/snapshot.png)
 
@@ -20,7 +20,7 @@ Features
 Dependencies
 ------------
 
-- Zend Framework 2
+- Zend Framework 2 or Zend Framework 3 
 - Zend Developer Tools
 
 Instalation
@@ -30,7 +30,7 @@ Instalation
 
 - run ```composer update```
 
-- Add ``` StefanoDbProfiler ``` to your application.config.php
+- Add module ``` StefanoDbProfiler ``` to your application.config.php
 
 - Enable profiler for your Db Adapter or Adapters
 
