@@ -1,7 +1,7 @@
 {
     "name": "stefano/stefano-db-profiler",
     "description": "A ZF2, ZF3 module to profile db queries using Zend\\Db\\Adapter\\Profiler\\Profiler and write them to ZendDeveloperTools toolbar.",
-    "version": "dev-develop",
+    "version": "0.2.0",
     "license": "BSD-3-Clause",
     "keywords": [
         "database", "profiler", "zf2", "zf3", "module"
@@ -18,7 +18,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "zendframework/zendframework": "2.*",
+        "zendframework/zend-db": "2.*",
         "zendframework/zend-developer-tools": "*"
     },
     "require-dev": {
