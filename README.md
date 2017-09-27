@@ -1,5 +1,8 @@
-Db Profiler
-=====
+[DEPRECATED] Db Profiler
+========================
+
+This library is NOT MAINTAINED anymore please use [bjyoungblood/BjyProfiler
+](https://github.com/bjyoungblood/BjyProfiler) instead.
 
 | Dependencies |
 | :---: |
